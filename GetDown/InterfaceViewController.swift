@@ -15,6 +15,7 @@ class InterfaceViewController: UIViewController {
     
     //CLASS CONSTS
     let VERT_STACK_SPACING: CGFloat = 10
+    let EST_BUTTON_SIZE: CGFloat = 100.0
     
     //CLASS VARS
     var verticalStacks: [UIStackView]? //Maybe dont need, can possibly use horizontal stack arranged subviews
@@ -27,6 +28,13 @@ class InterfaceViewController: UIViewController {
     //###############Class Methods####################
     //################################################
     override func viewDidLoad() {
+        //Map number of rows and columns to screenSize
+        let bounds = UIScreen.main.bounds
+        let width = bounds.size.width
+        let height = bounds.size.height - (self.navigationController?.navigationBar.frame.size.height)!
+        numRows = Int(floor(width / EST_BUTTON_SIZE))
+        numButtonsPerRow = Int(floor(height / EST_BUTTON_SIZE))
+        
         for x in 0..<numRows {
             let stack = UIStackView()
             stack.axis = .vertical

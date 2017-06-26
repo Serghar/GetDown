@@ -194,6 +194,9 @@
                                                     <rect key="frame" x="16" y="18" width="736" height="43"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="26"/>
                                                     <state key="normal" title="Press To Set Sample"/>
+                                                    <connections>
+                                                        <action selector="SetSampleButtonPressed:" destination="iPz-Co-dwL" eventType="touchUpInside" id="Q3Q-HC-OWz"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -213,6 +216,8 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="activeColorButton" destination="Q4W-cz-3lv" id="XQV-s1-iVp"/>
+                        <outlet property="primaryColorButton" destination="Eee-yi-3qi" id="Yrz-Tq-SNE"/>
                         <segue destination="ULB-gg-fJY" kind="show" identifier="mediaSampleSegue" id="sOv-SQ-tVW"/>
                     </connections>
                 </tableViewController>
